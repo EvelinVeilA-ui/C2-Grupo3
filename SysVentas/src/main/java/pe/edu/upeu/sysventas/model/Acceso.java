@@ -1,17 +1,20 @@
 package pe.edu.upeu.sysventas.model;
 
-import javafx.scene.control.Menu;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import pe.edu.upeu.sysventas.enums.Menus;
 import pe.edu.upeu.sysventas.enums.TipoTab;
 
-import java.lang.reflect.Member;
-@Getter
-@Setter
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Acceso {
     String idAcceso;
     String urlAcceso;
+    Menus menuNombre;
     String menuItemNombre;
-    Menu menuNombre;
     TipoTab nombreTab;
 }
