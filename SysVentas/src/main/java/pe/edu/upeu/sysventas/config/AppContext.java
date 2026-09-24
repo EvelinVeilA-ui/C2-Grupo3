@@ -36,7 +36,7 @@ public class AppContext {
 
         registrar(CategoriaRepository.class,     new CategoriaRepository());
         registrar(MarcaRepository.class,         new MarcaRepository());
-        registrar(UnidMedidaRepository.class,    new UnidMedidaRepository());
+        registrar(UnidMedidaRepository.class,  new UnidMedidaRepository());
         registrar(ProductoRepository.class,      new ProductoRepository());
 
     }
@@ -47,9 +47,9 @@ public class AppContext {
     private void registrarServicios() {
 
         registrar(ICategoriaSerrvice.class,    new CategoriaServiceImp(   getBean(CategoriaRepository.class)));
-        registrar(IMarcaService.class,         new MarcaServiceImp(       getBean(MarcaRepository.class)));
-        registrar(IProductoService.class,      new ProductoServiceImp(    getBean(ProductoRepository.class)));
-        registrar(IUnidMedidaService.class,    new UnidMedidaServiceImp(getBean(UnidMedidaRepository.class)));
+        registrar(IMarcaService.class,        new MarcaServiceImp(       getBean(MarcaRepository.class)));
+        registrar(IProductoService.class,     new ProductoServiceImp(    getBean(ProductoRepository.class)));
+        registrar(IUnidMedidaService.class, new UnidMedidaServiceImp(getBean(UnidMedidaRepository.class)));
 
 
     }
