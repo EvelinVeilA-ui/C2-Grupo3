@@ -1,6 +1,6 @@
 package pe.edu.upeu.sysventas.service.impl;
+
 import pe.edu.upeu.sysventas.dto.ComboBoxOption;
-import pe.edu.upeu.sysventas.model.Categoria;
 import pe.edu.upeu.sysventas.model.UnidMedida;
 import pe.edu.upeu.sysventas.repository.ICrudGenericoRepository;
 import pe.edu.upeu.sysventas.repository.UnidMedidaRepository;
@@ -25,9 +25,6 @@ public class UnidMedidaServiceImp extends CrudGenericoServiceImp<UnidMedida, Lon
 
     @Override
     public List<ComboBoxOption> listarCombobox() {
-        if(unidadMedidaRepository.findAll().isEmpty()) {
-            unidadMedidaRepository.seedData();
-        }
         List<ComboBoxOption> listar = new ArrayList<>();
         for (UnidMedida m : unidadMedidaRepository.findAll()) {
             ComboBoxOption cb = new ComboBoxOption();
