@@ -39,6 +39,8 @@ public class AppContext {
         registrar(UnidMedidaRepository.class,  new UnidMedidaRepository());
         registrar(ProductoRepository.class,      new ProductoRepository());
 
+        registrar(UsuarioRepository.class, new UsuarioRepository());
+
     }
 
     // CAPA 2 — SERVICIOS
@@ -51,6 +53,7 @@ public class AppContext {
         registrar(IProductoService.class,     new ProductoServiceImp(    getBean(ProductoRepository.class)));
         registrar(IUnidMedidaService.class, new UnidMedidaServiceImp(getBean(UnidMedidaRepository.class)));
 
+        registrar(IUsuarioService.class, new UsuarioServiceImp(getBean(UsuarioRepository.class)));
 
     }
 
@@ -66,6 +69,8 @@ public class AppContext {
                         getBean(ICategoriaSerrvice.class),
                         getBean(IProductoService.class),
                         getBean(IUnidMedidaService.class)));
+
+        registrar(LoginController.class, new LoginController(getBean(IUsuarioService.class)));
 
     }
 
