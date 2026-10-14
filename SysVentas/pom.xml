@@ -58,7 +58,7 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.46</version>
-            <scope>compile</scope>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Source: https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
@@ -66,7 +66,6 @@
             <groupId>org.hibernate.validator</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>8.0.3.Final</version>
-            <scope>compile</scope>
         </dependency>
         <!-- Source: https://mvnrepository.com/artifact/jakarta.validation/jakarta.validation-api -->
         <dependency>
@@ -80,13 +79,14 @@
             <artifactId>expressly</artifactId>
             <version>5.0.0</version>
         </dependency>
-        <!-- Source: https://mvnrepository.com/artifact/org.postgresql/postgresql -->
+
+        <!-- Source: https://mvnrepository.com/artifact/com.h2database/h2 -->
         <dependency>
-            <groupId>org.postgresql</groupId>
-            <artifactId>postgresql</artifactId>
-            <version>42.7.13</version>
-            <scope>compile</scope>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>2.4.240</version>
         </dependency>
+
         <!-- ===== HIKARICP — pool de conexiones ===== -->
         <dependency>
             <groupId>com.zaxxer</groupId>
@@ -99,6 +99,9 @@
             <artifactId>logback-classic</artifactId>
             <version>1.4.14</version>
         </dependency>
+
+
+
     </dependencies>
 
     <build>
