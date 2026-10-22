@@ -68,7 +68,7 @@ public class VentaRepository extends AbstractJpaRepository<Venta, Long> {
     public Optional<Venta> findById(Long id) {
         Optional<Venta> opt = executeQueryOne(
                 "SELECT v.*, c.nombres FROM venta v " +
-                        "JOIN cliente c ON v.dniruc = c.dniruc WHERE v.id_venta = ?", id);
+                "JOIN cliente c ON v.dniruc = c.dniruc WHERE v.id_venta = ?", id);
         opt.ifPresent(v -> v.setDetalleVenta(loadDetalles(id)));
         return opt;
     }
@@ -76,7 +76,7 @@ public class VentaRepository extends AbstractJpaRepository<Venta, Long> {
     private List<VentaDetalle> loadDetalles(Long idVenta) {
         List<VentaDetalle> detalles = new ArrayList<>();
         String sql = "SELECT vd.*, p.nombre AS prod_nombre FROM venta_detalle vd " +
-                "JOIN producto p ON vd.id_producto = p.id_producto WHERE vd.id_venta = ?";
+                     "JOIN producto p ON vd.id_producto = p.id_producto WHERE vd.id_venta = ?";
         try (Connection conn = openConnection();
              PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setLong(1, idVenta);

@@ -1,20 +1,20 @@
 package pe.edu.upeu.sysventas.service.impl;
 
 import pe.edu.upeu.sysventas.dto.ComboBoxOption;
+import pe.edu.upeu.sysventas.model.Categoria;
 import pe.edu.upeu.sysventas.model.UnidMedida;
 import pe.edu.upeu.sysventas.repository.ICrudGenericoRepository;
-import pe.edu.upeu.sysventas.repository.UnidMedidaRepository;
-import pe.edu.upeu.sysventas.service.IUnidMedidaService;
-
+import pe.edu.upeu.sysventas.repository.UnidadMedidaRepository;
+import pe.edu.upeu.sysventas.service.IUnidadMedidaService;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class UnidMedidaServiceImp extends CrudGenericoServiceImp<UnidMedida, Long> implements IUnidMedidaService {
+public class UnidadMedidaServiceImp extends CrudGenericoServiceImp<UnidMedida, Long> implements IUnidadMedidaService {
 
-    private final UnidMedidaRepository unidadMedidaRepository;
+    private final UnidadMedidaRepository unidadMedidaRepository;
 
-    public UnidMedidaServiceImp(UnidMedidaRepository unidadMedidaRepository) {
+    public UnidadMedidaServiceImp(UnidadMedidaRepository unidadMedidaRepository) {
         this.unidadMedidaRepository = unidadMedidaRepository;
     }
 

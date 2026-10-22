@@ -16,8 +16,8 @@ public class VentCarritoRepository extends AbstractJpaRepository<VentCarrito, Lo
 
     private static final String SELECT_JOIN =
             "SELECT vc.*, p.nombre AS prod_nombre, p.pu AS prod_pu, p.stock AS prod_stock " +
-                    "FROM vent_carrito vc " +
-                    "JOIN producto p ON vc.id_producto = p.id_producto ";
+            "FROM vent_carrito vc " +
+            "JOIN producto p ON vc.id_producto = p.id_producto ";
 
     @Override public List<VentCarrito> findAll() { return executeQuery(SELECT_JOIN); }
     @Override public Optional<VentCarrito> findById(Long id) {

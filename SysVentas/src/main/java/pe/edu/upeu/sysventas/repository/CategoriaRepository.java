@@ -18,10 +18,10 @@ public class CategoriaRepository extends AbstractJpaRepository<Categoria, Long> 
 
     @Override
     protected Categoria insert(Connection connection, Categoria entity) throws SQLException {
-        long id=executeInsertGetKey(connection,
-                " insert into  categoria(nombre) values(?)", entity.getNombre());
-        entity.setIdCategoria(id);
-        return entity;
+       long id=executeInsertGetKey(connection,
+               " insert into  categoria(nombre) values(?)", entity.getNombre());
+       entity.setIdCategoria(id);
+       return entity;
     }
 
     @Override
@@ -29,7 +29,7 @@ public class CategoriaRepository extends AbstractJpaRepository<Categoria, Long> 
         executeUpdate(connection,
                 "update categoria set nombre=? where id_categoria=?",
                 entity.getNombre(), entity.getIdCategoria()
-        );
+                );
 
         return entity;
     }

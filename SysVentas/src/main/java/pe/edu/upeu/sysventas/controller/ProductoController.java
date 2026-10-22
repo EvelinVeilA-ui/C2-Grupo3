@@ -19,7 +19,10 @@ import pe.edu.upeu.sysventas.components.ToltipCustom;
 import pe.edu.upeu.sysventas.dto.ComboBoxOption;
 import pe.edu.upeu.sysventas.enums.TipoProducto;
 import pe.edu.upeu.sysventas.model.Producto;
-import pe.edu.upeu.sysventas.service.*;
+import pe.edu.upeu.sysventas.service.ICategoriaService;
+import pe.edu.upeu.sysventas.service.IMarcaService;
+import pe.edu.upeu.sysventas.service.IProductoService;
+import pe.edu.upeu.sysventas.service.IUnidadMedidaService;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -28,9 +31,9 @@ import java.util.function.Consumer;
 public class ProductoController {
 
     private final IMarcaService ms;
-    private final ICategoriaSerrvice cs;
+    private final ICategoriaService cs;
     private final IProductoService ps;
-    private final IUnidMedidaService us;
+    private final IUnidadMedidaService us;
 
     @FXML
     ComboBox<ComboBoxOption> cbxTipoProducto, cbxMarca, cbxCategoria, cbxUnidMedida;
@@ -71,7 +74,7 @@ public class ProductoController {
         columns.put("Categoria", new ColumnInfo("idCategoria.nombre", 200.0));
 
         Consumer<Producto> updateAction = producto ->{  editForm(producto);
-            idProductoCE=producto.getIdProducto();
+        idProductoCE=producto.getIdProducto();
         };
         Consumer<Producto> deleteAction = producto -> {
             ps.delete(producto.getIdProducto());

@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class UnidMedidaRepository extends AbstractJpaRepository<UnidMedida, Long>{
+public class UnidadMedidaRepository extends AbstractJpaRepository<UnidMedida, Long>{
 
     @Override
     protected String getTableName() {

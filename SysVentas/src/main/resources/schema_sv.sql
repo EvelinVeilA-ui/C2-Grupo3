@@ -159,7 +159,7 @@ MERGE INTO marca (id_marca, nombre) KEY (id_marca) VALUES (1, 'LG');
 
 MERGE INTO unid_medida (id_unidad, nombre_medida) KEY (id_unidad) VALUES (1, 'Unidad');
 
--- H2 no avanza la identidad al insertar ID's explícitos: se reinicia tras los datos iniciales
+-- H2 no avanza la identidad al insertar IDs explícitos: se reinicia tras los datos iniciales
 --ALTER TABLE perfil ALTER COLUMN id_perfil RESTART WITH (SELECT COALESCE(MAX(id_perfil), 0) + 1 FROM perfil);
 --ALTER TABLE usuario ALTER COLUMN id_usuario RESTART WITH (SELECT COALESCE(MAX(id_usuario), 0) + 1 FROM usuario);
 --ALTER TABLE categoria ALTER COLUMN id_categoria RESTART WITH (SELECT COALESCE(MAX(id_categoria), 0) + 1 FROM categoria);
